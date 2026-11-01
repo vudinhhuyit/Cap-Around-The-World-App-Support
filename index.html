@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capybara Around the World – Support & Privacy</title>
+<meta name="description" content="Support and privacy policy for the Capybara Around the World iOS game.">
+<style>
+  :root {
+    --bg: #f4f8fd;
+    --card: #ffffff;
+    --text: #1d2733;
+    --muted: #5b6878;
+    --accent: #e8590c;
+    --sky: #2388ec;
+    --line: #dde6f0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1620;
+      --card: #18222f;
+      --text: #e7edf4;
+      --muted: #9aa8b8;
+      --accent: #ff4a4f;
+      --sky: #5aa9f5;
+      --line: #273444;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  header {
+    position: relative;
+    background: linear-gradient(180deg, #2388ec, #9cc9f6);
+    color: #fff;
+    padding: 56px 16px 40px;
+    text-align: center;
+  }
+  header img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+  header h1 { margin: 16px 0 4px; font-size: 32px; }
+  header p { margin: 0; opacity: .9; }
+
+  .lang-switch {
+    position: absolute; top: 16px; right: 16px;
+    display: inline-flex; padding: 3px; border-radius: 999px;
+    background: rgba(255,255,255,.22);
+  }
+  .lang-switch button {
+    border: 0; background: transparent; color: #fff; cursor: pointer;
+    font: 600 14px/1 inherit; font-family: inherit;
+    padding: 8px 14px; border-radius: 999px;
+  }
+  .lang-switch button[aria-pressed="true"] { background: #fff; color: #1d6fc4; }
+
+  nav { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+  nav a {
+    color: #fff; text-decoration: none; font-weight: 600;
+    padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,.2);
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 8px 16px 48px; }
+  section {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 24px; margin-top: 24px; scroll-margin-top: 16px;
+  }
+  h2 { margin-top: 0; font-size: 24px; }
+  h3 { margin-bottom: 4px; font-size: 18px; }
+  a { color: var(--sky); }
+  .download { text-align: center; }
+  .store-btn {
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 4px;
+    padding: 12px 22px; border-radius: 12px; background: #000; color: #fff;
+    text-decoration: none; font-weight: 600; font-size: 17px;
+    border: 1px solid #555;
+  }
+  .store-btn small { display: block; font-size: 11px; font-weight: 400; opacity: .85; line-height: 1.1; }
+  .store-btn span.label { text-align: left; line-height: 1.2; }
+  .qr { display: block; margin: 20px auto 8px; width: 168px; height: 168px; padding: 12px; background: #fff; border-radius: 12px; image-rendering: pixelated; }
+  .muted { color: var(--muted); font-size: 14px; }
+  .contact {
+    display: inline-block; margin-top: 8px; padding: 10px 18px; border-radius: 10px;
+    background: var(--accent); color: #fff; text-decoration: none; font-weight: 600;
+    word-break: break-all;
+  }
+  .download { text-align: center; }
+  .store-btn {
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 4px;
+    padding: 12px 22px; border-radius: 12px; background: #000; color: #fff;
+    text-decoration: none; font-weight: 600; font-size: 17px;
+    border: 1px solid #555;
+  }
+  .store-btn small { display: block; font-size: 11px; font-weight: 400; opacity: .85; line-height: 1.1; }
+  .store-btn span.label { text-align: left; line-height: 1.2; }
+  .qr { display: block; margin: 20px auto 8px; width: 168px; height: 168px; padding: 12px; background: #fff; border-radius: 12px; image-rendering: pixelated; }
+  footer { text-align: center; color: var(--muted); font-size: 14px; padding: 0 16px 32px; }
+
+  /* Only the selected language is shown. */
+  [data-lang] { display: none; }
+  html[lang="en"] [data-lang="en"], html[lang="vi"] [data-lang="vi"] { display: revert; }
+</style>
+<script>
+  // Pick the language before first paint: ?lang= > saved choice > browser language.
+  (function () {
+    var lang = new URLSearchParams(location.search).get("lang");
+    if (lang !== "en" && lang !== "vi") {
+      try { lang = localStorage.getItem("lang"); } catch (e) { lang = null; }
+    }
+    if (lang !== "en" && lang !== "vi") {
+      lang = (navigator.language || "en").toLowerCase().indexOf("vi") === 0 ? "vi" : "en";
+    }
+    document.documentElement.lang = lang;
+  })();
+</script>
+</head>
+<body>
+<header>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-set-lang="en">EN</button>
+    <button type="button" data-set-lang="vi">VI</button>
+  </div>
+  <img src="icon.png" alt="Capybara Around the World">
+  <h1>Capybara Around the World</h1>
+  <p data-lang="en">Feed the capybara, pop the ice</p>
+  <p data-lang="vi">Cho capybara ăn, đập băng giải đố</p>
+  <nav>
+    <a href="#about"><span data-lang="en">About</span><span data-lang="vi">Giới thiệu</span></a>
+    <a href="#support"><span data-lang="en">Support</span><span data-lang="vi">Hỗ trợ</span></a>
+    <a href="#privacy"><span data-lang="en">Privacy Policy</span><span data-lang="vi">Quyền riêng tư</span></a>
+  </nav>
+</header>
+
+<main>
+  <!-- About -->
+  <section id="about">
+    <div data-lang="en">
+      <h2>About</h2>
+      <p>Capybara Around the World is a cheerful physics puzzle game. A hungry capybara is travelling the globe and it is up to you to bring dinner: a burger in New York, a croissant in Paris, sushi in Japan and more. Pop the ice, set off the pushers and guide the food right into the capybara&#x27;s mouth!</p>
+      <p>Every level is a small physics puzzle. Tap the ice blocks to pop them, tap and release a pusher to launch the food, bounce it off springy jumpers and keep it away from the electric fences. Collect up to three stars on the way for a bigger score.</p>
+      <h3>How To Play</h3>
+      <ul>
+        <li>Tap an ice block to pop it</li>
+        <li>Tap and release a pusher to throw whatever sits on it</li>
+        <li>Drag the screen to look around the bigger levels</li>
+        <li>Collect the stars, avoid the electric fence and get the food to the capybara</li>
+      </ul>
+      <h3>Features</h3>
+      <ul>
+        <li>30 hand-made levels in six countries: USA, France, Egypt, Japan, Australia and Easter Island</li>
+        <li>Real physics: rolling, bouncing, see-saws, heavy metal blocks and moving ice platforms</li>
+        <li>Three stars in every level and a time bonus: the faster you solve a level, the higher your score</li>
+        <li>A world map with a photo of every level, so you can replay any level you have unlocked to improve your result</li>
+        <li>Skip a level that has you stuck and carry on with the next one</li>
+        <li>Plays fully offline and collects no data</li>
+        <li>Free to play. Optional one-time purchases: Pro removes ads, and Premium removes ads and opens every country without collecting stars</li>
+        <li>Plays on iPhone and iPad</li>
+      </ul>
+      <p>Can you feed the capybara in all 30 levels?</p>
+    </div>
+
+    <div data-lang="vi">
+      <h2>Giới thiệu</h2>
+      <p>Capybara Around the World là game giải đố vật lý vui nhộn. Một chú capybara đói đang đi vòng quanh thế giới và bạn phải mang bữa tối tới cho nó: bánh burger ở New York, bánh sừng bò ở Paris, sushi ở Nhật Bản và nhiều món khác. Hãy đập băng, kích hoạt bệ đẩy và đưa món ăn thẳng vào miệng chú capybara!</p>
+      <p>Mỗi màn chơi là một câu đố vật lý nhỏ. Chạm vào khối băng để đập vỡ, chạm rồi thả bệ đẩy để phóng món ăn, cho nó nảy trên bệ lò xo và tránh xa hàng rào điện. Gom tối đa ba ngôi sao trên đường đi để được điểm cao hơn.</p>
+      <h3>Cách Chơi</h3>
+      <ul>
+        <li>Chạm vào khối băng để đập vỡ</li>
+        <li>Chạm rồi thả bệ đẩy để ném vật đang nằm trên đó</li>
+        <li>Kéo màn hình để xem các màn chơi lớn hơn</li>
+        <li>Gom sao, tránh hàng rào điện và đưa món ăn tới chú capybara</li>
+      </ul>
+      <h3>Tính Năng</h3>
+      <ul>
+        <li>30 màn chơi thủ công ở sáu quốc gia: Mỹ, Pháp, Ai Cập, Nhật Bản, Úc và đảo Phục Sinh</li>
+        <li>Vật lý chân thực: lăn, nảy, bập bênh, khối kim loại nặng và bệ băng di động</li>
+        <li>Ba ngôi sao mỗi màn và điểm thưởng thời gian: giải càng nhanh, điểm càng cao</li>
+        <li>Bản đồ thế giới có ảnh của từng màn, để chơi lại bất kỳ màn nào đã mở khoá và cải thiện kết quả</li>
+        <li>Bỏ qua màn đang bí để chơi tiếp màn sau</li>
+        <li>Chơi hoàn toàn offline và không thu thập dữ liệu</li>
+        <li>Chơi miễn phí. Có thể mua thêm một lần: Pro để bỏ quảng cáo, Premium để bỏ quảng cáo và mở mọi quốc gia mà không cần gom sao</li>
+        <li>Chơi được trên iPhone và iPad</li>
+      </ul>
+      <p>Bạn có cho chú capybara ăn xong cả 30 màn không?</p>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section id="download" class="download" hidden> <!-- hidden until the app is live: remove "hidden" -->
+    <div data-lang="en">
+      <h2>Get Capybara Around the World</h2>
+      <p>Free on the App Store for iPhone and iPad.</p>
+      <a class="store-btn" href="https://apps.apple.com/vn/app/redball-2d/id6829455439"><span class="label"><small>Download on the</small>App Store</span></a>
+      <img class="qr" src="qr-appstore.png" alt="QR code to download Capybara Around the World on the App Store" width="168" height="168">
+      <p class="muted">Or scan this QR code with your camera.</p>
+    </div>
+    <div data-lang="vi">
+      <h2>Tải Capybara Around the World</h2>
+      <p>Miễn phí trên App Store cho iPhone và iPad.</p>
+      <a class="store-btn" href="https://apps.apple.com/vn/app/redball-2d/id6829455439"><span class="label"><small>Tải xuống trên</small>App Store</span></a>
+      <img class="qr" src="qr-appstore.png" alt="Mã QR tải Capybara Around the World trên App Store" width="168" height="168">
+      <p class="muted">Hoặc quét mã QR này bằng camera.</p>
+    </div>
+  </section>
+
+  <!-- Support -->
+  <section id="support">
+    <div data-lang="en">
+      <h2>Support</h2>
+      <p>Need help with Capybara Around the World, found a bug, or have a suggestion? Send us an email and we will get back to you as soon as we can.</p>
+      <a class="contact" href="mailto:vudinhhuyit@gmail.com?subject=Capybara%20Around%20the%20World%20Support">vudinhhuyit@gmail.com</a>
+      <p class="muted">Please include your device model and iOS / iPadOS version.</p>
+
+      <h3>How do I play?</h3>
+      <p>Tap an ice block to pop it. Tap and hold a pusher, then let go to throw whatever is sitting on it. Collect the stars and get the food to the capybara. Touching an electric fence restarts the level.</p>
+
+      <h3>How do I look at the rest of a big level?</h3>
+      <p>Drag the screen up and down (or left and right) to look around. The camera follows the food again after a pusher launch.</p>
+
+      <h3>How is my score worked out?</h3>
+      <p>Each level starts at 3000 points that count down once you start playing, plus 1000 points for every star you collect.</p>
+
+      <h3>How do I open the next country?</h3>
+      <p>Collect at least 9 of the 15 stars of a country to open the next one. The world map shows how many you have. <em>Premium</em> opens every country without collecting stars.</p>
+
+      <h3>What are Pro and Premium?</h3>
+      <p>Open <em>Settings</em> (the gear at the bottom left of the main menu). <em>Pro</em> removes all ads, forever. <em>Premium</em> removes all ads and opens every country without collecting stars. Both are one-time purchases.</p>
+
+      <h3>How do I restore my purchases?</h3>
+      <p>If you reinstalled the app or changed device, open <em>Settings</em> on the main menu and tap <em>Restore purchases</em> while signed in with the same Apple ID.</p>
+
+      <h3>How do I replay a level?</h3>
+      <p>Tap <em>Level select</em> on the finish screen or in the pause menu, use the arrows to travel to a country and tap any unlocked level. The best score of each level is kept.</p>
+
+      <h3>I am stuck on a level</h3>
+      <p>Tap the pause button (II) at the top right and choose <em>Skip level</em> (the arrow icon). The next level unlocks, and you can come back to the skipped one at any time.</p>
+
+      <h3>How do I turn the sound off?</h3>
+      <p>Tap the music-note button in the top bar or on the main menu. It switches all sound on or off, and the choice is remembered.</p>
+
+      <h3>My progress is gone</h3>
+      <p>Progress is stored only on your device. Deleting the app, or choosing <em>Clear progress</em> on the main menu, also deletes your unlocked levels and scores.</p>
+    </div>
+
+    <div data-lang="vi">
+      <h2>Hỗ trợ</h2>
+      <p>Cần trợ giúp, gặp lỗi hoặc có góp ý về Capybara Around the World? Hãy gửi email cho chúng tôi, chúng tôi sẽ phản hồi sớm nhất có thể.</p>
+      <a class="contact" href="mailto:vudinhhuyit@gmail.com?subject=Capybara%20Around%20the%20World%20Support">vudinhhuyit@gmail.com</a>
+      <p class="muted">Vui lòng ghi kèm tên thiết bị và phiên bản iOS / iPadOS.</p>
+
+      <h3>Chơi như thế nào?</h3>
+      <p>Chạm vào khối băng để đập vỡ. Chạm giữ bệ đẩy rồi thả tay để ném vật đang nằm trên đó. Gom sao và đưa món ăn tới chú capybara. Chạm vào hàng rào điện sẽ phải chơi lại màn.</p>
+
+      <h3>Làm sao xem phần còn lại của màn chơi lớn?</h3>
+      <p>Kéo màn hình lên xuống (hoặc sang trái phải) để nhìn xung quanh. Camera sẽ tự đi theo món ăn sau khi bệ đẩy phóng nó đi.</p>
+
+      <h3>Điểm được tính thế nào?</h3>
+      <p>Mỗi màn bắt đầu từ 3000 điểm và giảm dần khi bạn bắt đầu chơi, cộng thêm 1000 điểm cho mỗi ngôi sao gom được.</p>
+
+      <h3>Làm sao mở quốc gia tiếp theo?</h3>
+      <p>Gom ít nhất 9 trên 15 ngôi sao của một quốc gia để mở quốc gia kế. Bản đồ thế giới cho biết bạn đã có bao nhiêu sao. Gói <em>Premium</em> mở mọi quốc gia mà không cần gom sao.</p>
+
+      <h3>Pro và Premium là gì?</h3>
+      <p>Mở <em>Cài đặt</em> (biểu tượng bánh răng ở góc dưới bên trái menu chính). <em>Pro</em> bỏ toàn bộ quảng cáo vĩnh viễn. <em>Premium</em> bỏ toàn bộ quảng cáo và mở mọi quốc gia mà không cần gom sao. Cả hai đều chỉ mua một lần.</p>
+
+      <h3>Làm sao khôi phục giao dịch đã mua?</h3>
+      <p>Nếu bạn cài lại ứng dụng hoặc đổi thiết bị, hãy mở <em>Cài đặt</em> ở menu chính và chạm <em>Restore purchases</em>, với cùng tài khoản Apple ID.</p>
+
+      <h3>Làm sao chơi lại một màn?</h3>
+      <p>Chạm <em>Chọn màn</em> ở màn hình kết thúc hoặc trong menu tạm dừng, dùng mũi tên để đến một quốc gia rồi chạm vào màn đã mở khoá. Điểm cao nhất của từng màn được lưu lại.</p>
+
+      <h3>Tôi bị kẹt ở một màn</h3>
+      <p>Chạm nút tạm dừng (II) ở góc trên bên phải rồi chọn <em>Bỏ qua màn</em> (biểu tượng mũi tên). Màn tiếp theo sẽ được mở khoá và bạn có thể quay lại màn đã bỏ qua bất cứ lúc nào.</p>
+
+      <h3>Làm sao tắt âm thanh?</h3>
+      <p>Chạm nút nốt nhạc ở thanh trên cùng hoặc ở menu chính. Nút này bật hoặc tắt toàn bộ âm thanh và lựa chọn được ghi nhớ.</p>
+
+      <h3>Tiến trình của tôi bị mất</h3>
+      <p>Tiến trình chỉ được lưu trên thiết bị của bạn. Xoá ứng dụng hoặc chọn <em>Xoá tiến trình</em> ở menu chính cũng sẽ xoá các màn đã mở khoá và điểm số.</p>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section id="privacy">
+    <div data-lang="en">
+      <h2>Privacy Policy</h2>
+      <p class="muted">Last updated: November 2, 2026</p>
+      <p>This policy explains how the Capybara Around the World app (“the app”) handles your information.</p>
+
+      <h3>Data we collect</h3>
+      <p>None. The app has no accounts, no analytics and no third-party SDKs, and it never sends any data off your device.</p>
+
+      <h3>Data stored on your device</h3>
+      <p>The app saves your unlocked levels, your best scores and stars, and your sound setting locally on your device. This data stays on your device and is removed when you delete the app or tap <em>Clear progress</em>.</p>
+
+      <h3>In-app purchases</h3>
+      <p>Pro and Premium are one-time purchases processed entirely by Apple through the App Store. We never see or store your payment details or Apple ID. The app only learns, on your device, whether a purchase is owned.</p>
+
+      <h3>Internet</h3>
+      <p>The game works completely offline. An internet connection is only used by the App Store to complete or restore a purchase.</p>
+
+      <h3>Children’s privacy</h3>
+      <p>Capybara Around the World is suitable for everyone. Because we collect no data at all, we do not collect personal information from children either.</p>
+
+      <h3>Changes to this policy</h3>
+      <p>If this policy changes, we will update this page and the date above.</p>
+
+      <h3>Contact</h3>
+      <p>Questions about this policy? Email <a href="mailto:vudinhhuyit@gmail.com">vudinhhuyit@gmail.com</a>.</p>
+    </div>
+
+    <div data-lang="vi">
+      <h2>Chính sách quyền riêng tư</h2>
+      <p class="muted">Cập nhật lần cuối: 02/11/2026</p>
+      <p>Chính sách này giải thích cách ứng dụng Capybara Around the World (“ứng dụng”) xử lý thông tin của bạn.</p>
+
+      <h3>Dữ liệu chúng tôi thu thập</h3>
+      <p>Không có. Ứng dụng không có tài khoản, không phân tích và không dùng SDK của bên thứ ba, đồng thời không bao giờ gửi dữ liệu nào ra khỏi thiết bị của bạn.</p>
+
+      <h3>Dữ liệu lưu trên thiết bị</h3>
+      <p>Ứng dụng lưu các màn đã mở khoá, điểm cao nhất, số sao và cài đặt âm thanh ngay trên thiết bị của bạn. Dữ liệu này chỉ nằm trên thiết bị và sẽ bị xoá khi bạn xoá ứng dụng hoặc chọn <em>Xoá tiến trình</em>.</p>
+
+      <h3>Mua trong ứng dụng</h3>
+      <p>Pro và Premium là các giao dịch mua một lần, do Apple xử lý hoàn toàn qua App Store. Chúng tôi không bao giờ thấy hay lưu thông tin thanh toán hoặc Apple ID của bạn. Ứng dụng chỉ biết, ngay trên thiết bị, rằng một gói đã được mua hay chưa.</p>
+
+      <h3>Internet</h3>
+      <p>Trò chơi hoạt động hoàn toàn offline. Kết nối internet chỉ được App Store dùng để hoàn tất hoặc khôi phục giao dịch.</p>
+
+      <h3>Quyền riêng tư của trẻ em</h3>
+      <p>Capybara Around the World phù hợp với mọi lứa tuổi. Vì chúng tôi không thu thập bất kỳ dữ liệu nào nên cũng không thu thập thông tin cá nhân của trẻ em.</p>
+
+      <h3>Thay đổi chính sách</h3>
+      <p>Nếu chính sách thay đổi, chúng tôi sẽ cập nhật trang này và ngày ở trên.</p>
+
+      <h3>Liên hệ</h3>
+      <p>Có câu hỏi về chính sách này? Hãy gửi email tới <a href="mailto:vudinhhuyit@gmail.com">vudinhhuyit@gmail.com</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Capybara Around the World</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var buttons = document.querySelectorAll("[data-set-lang]");
+    var titles = { en: "Capybara Around the World – Support & Privacy", vi: "Capybara Around the World – Hỗ trợ & Quyền riêng tư" };
+    function apply(lang) {
+      root.lang = lang;
+      document.title = titles[lang];
+      buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.setLang === lang)); });
+    }
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function () {
+        apply(b.dataset.setLang);
+        try { localStorage.setItem("lang", b.dataset.setLang); } catch (e) {}
+      });
+    });
+    apply(root.lang);
+  })();
+</script>
+</body>
+</html>
